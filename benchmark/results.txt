@@ -1,0 +1,53 @@
+Tripwire benchmark: 113 fixtures (59 malicious-signal, 54 benign)
+Self-made, inert corpus: these numbers show the rules work as designed, not real-world detection rates.
+
+analyser         TP  FP  FN   prec  recall     F1
+--------------------------------------------------
+install_hooks    20   1   2   0.95    0.91   0.93
+obfuscation      13   1   0   0.93    1.00   0.96
+network          14   1   7   0.93    0.67   0.78
+credentials      14   4   3   0.78    0.82   0.80
+typosquat        10   2   1   0.83    0.91   0.87
+depconfusion      5   1   0   0.83    1.00   0.91
+--------------------------------------------------
+overall (>=50)   50   5   9   0.91    0.85   0.88
+
+Flag-line sweep (malicious vs benign):
+  score >=   TP  FP  FN   prec  recall
+  20         57  16   2   0.78    0.97
+  35         57  11   2   0.84    0.97
+  50         50   5   9   0.91    0.85
+  70         32   2  27   0.94    0.54
+  85         19   1  40   0.95    0.32
+
+Median scan time per fixture: 71.4 ms
+
+False positives (analyser fired on a fixture not written for its category):
+  [benign] aws-config-reader: credentials/cloud_credentials w=0.45 (score 45)
+  [benign] ssh-known-hosts: credentials/ssh_keys w=0.50 (score 50)
+  [benign] high-version-driver: depconfusion/absurd_version w=0.45 (score 45)
+  [benign] pth-shim: install_hooks/pth_exec w=0.80 (score 80)
+  [benign] plugin-loader-decode: obfuscation/exec_decoded_blob w=0.85 (score 85)
+  [benign] dns-region-format: network/dns_exfil w=0.60 (score 60)
+  [benign] deploy-ssh-config: credentials/ssh_keys w=0.50 (score 50)
+  [benign] publish-helper-npmrc: credentials/registry_tokens w=0.45 (score 45)
+  [benign] yaml-js-port: typosquat/name_lookalike w=0.35 (score 35)
+  [benign] pytoml-port: typosquat/name_lookalike w=0.35 (score 35)
+
+Benign fixtures over the flag line:
+  ssh-known-hosts: score 50 (credentials)
+  pth-shim: score 80 (install_hooks)
+  plugin-loader-decode: score 85 (obfuscation)
+  dns-region-format: score 60 (network)
+  deploy-ssh-config: score 50 (credentials)
+
+Malicious-signal fixtures under the flag line:
+  setup-getattr-exec: score 45 fired=obfuscation  [install override hides exec behind a joined name]
+  getattr-chr: score 45 fired=obfuscation
+  kube-gcloud: score 45 fired=credentials
+  shell-history: score 40 fired=credentials
+  secret-env-names: score 35 fired=credentials  [collects named secrets, sends to an ordinary-looking domain]
+  npmrc-fetch: score 45 fired=credentials
+  raw-ip-post: score 45 fired=network
+  net-connect-port-first: score 0 fired=-  [hard: Node's connect(port, host) argument order]
+  beacon-own-domain: score 0 fired=-  [hard: fingerprint beacon to an ordinary-looking domain]

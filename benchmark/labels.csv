@@ -1,0 +1,114 @@
+id,ecosystem,kind,package,version,label,signals,note
+setup-env-post,pypi,sdist,twfx-setup-env-post,1.0.0,malicious,credentials install_hooks network,install override posts the whole environment
+setup-curl-sh,pypi,sdist,twfx-setup-curl-sh,1.0.0,malicious,install_hooks,
+setup-powershell,pypi,sdist,twfx-setup-powershell,1.0.0,malicious,install_hooks,
+setup-raw-socket,pypi,sdist,twfx-setup-raw-socket,1.0.0,malicious,install_hooks network,
+pth-exec-env,pypi,wheel,twfx-pth-exec-env,1.0.0,malicious,install_hooks,.pth line runs at every interpreter start
+pth-b64,pypi,wheel,twfx-pth-b64,1.0.0,malicious,install_hooks obfuscation,
+setup-local-helper,pypi,sdist,twfx-setup-local-helper,1.0.0,malicious,credentials install_hooks network,setup.py imports a local module that does the work
+setup-exec-remote,pypi,sdist,twfx-setup-exec-remote,1.0.0,malicious,install_hooks,
+setup-getattr-exec,pypi,sdist,twfx-setup-getattr-exec,1.0.0,malicious,install_hooks obfuscation,install override hides exec behind a joined name
+setup-certutil,pypi,sdist,twfx-setup-certutil,1.0.0,malicious,install_hooks network,
+setup-hostname-beacon,pypi,sdist,twfx-setup-hostname-beacon,1.0.0,malicious,install_hooks network,
+init-exec-b64,pypi,sdist,twfx-init-exec-b64,1.0.0,malicious,obfuscation,
+zlib-b64-exec,pypi,sdist,twfx-zlib-b64-exec,1.0.0,malicious,obfuscation,
+reversed-exec,pypi,sdist,twfx-reversed-exec,1.0.0,malicious,obfuscation,
+hex-exec,pypi,sdist,twfx-hex-exec,1.0.0,malicious,obfuscation,
+getattr-chr,pypi,sdist,twfx-getattr-chr,1.0.0,malicious,obfuscation,
+escaped-bytes-exec,pypi,sdist,twfx-escaped-bytes-exec,1.0.0,malicious,obfuscation,
+postinstall-node-e-curl,npm,npm,twfx-postinstall-node-e-curl,1.0.0,malicious,install_hooks,
+install-shell-script,npm,npm,twfx-install-shell-script,1.0.0,malicious,install_hooks,
+postinstall-child-powershell,npm,npm,twfx-postinstall-child-powershell,1.0.0,malicious,install_hooks,
+postinstall-minified-eval,npm,npm,twfx-postinstall-minified-eval,1.0.0,malicious,install_hooks obfuscation,install file is one long packed line plus eval(variable)
+env-beacon,npm,npm,twfx-env-beacon,1.0.0,malicious,credentials install_hooks network,
+preinstall-dns-depconf,npm,npm,acme-billing-sdk,999.9.9,malicious,depconfusion install_hooks network,
+eval-atob,npm,npm,twfx-eval-atob,1.0.0,malicious,obfuscation,
+function-buffer,npm,npm,twfx-function-buffer,1.0.0,malicious,obfuscation,
+packer-ids,npm,npm,twfx-packer-ids,1.0.0,malicious,obfuscation,
+fromcharcode-function,npm,npm,twfx-fromcharcode-function,1.0.0,malicious,obfuscation,
+ssh-key-raw-ip,pypi,sdist,twfx-ssh-key-raw-ip,1.0.0,malicious,credentials network,
+browser-login-data,pypi,sdist,twfx-browser-login-data,1.0.0,malicious,credentials,
+wallet-paths,pypi,sdist,twfx-wallet-paths,1.0.0,malicious,credentials,
+discord-leveldb,pypi,sdist,twfx-discord-leveldb,1.0.0,malicious,credentials,
+kube-gcloud,pypi,sdist,twfx-kube-gcloud,1.0.0,malicious,credentials,
+shell-history,pypi,sdist,twfx-shell-history,1.0.0,malicious,credentials,
+env-walk-dns,pypi,sdist,twfx-env-walk-dns,1.0.0,malicious,credentials network,
+secret-env-names,pypi,sdist,twfx-secret-env-names,1.0.0,malicious,credentials network,"collects named secrets, sends to an ordinary-looking domain"
+npmrc-fetch,npm,npm,twfx-npmrc-fetch,1.0.0,malicious,credentials network,
+fetch-env-body,npm,npm,twfx-fetch-env-body,1.0.0,malicious,credentials network,
+json-env-dump-post,pypi,sdist,twfx-json-env-dump-post,1.0.0,malicious,credentials network,
+dns-exfil-runtime,npm,npm,twfx-dns-exfil-runtime,1.0.0,malicious,network,
+raw-ip-post,pypi,sdist,twfx-raw-ip-post,1.0.0,malicious,network,
+net-connect-port-first,npm,npm,twfx-net-connect-port-first,1.0.0,malicious,network,"hard: Node's connect(port, host) argument order"
+env-requests-json,pypi,sdist,twfx-env-requests-json,1.0.0,malicious,credentials network,
+beacon-own-domain,pypi,sdist,twfx-beacon-own-domain,1.0.0,malicious,network,hard: fingerprint beacon to an ordinary-looking domain
+dns-format-exfil,pypi,sdist,twfx-dns-format-exfil,1.0.0,malicious,network,
+squat-reqeusts,pypi,sdist,reqeusts,1.0.0,malicious,typosquat,
+squat-nunpy,pypi,sdist,nunpy,1.0.0,malicious,typosquat,
+squat-djang0,pypi,sdist,djang0,1.0.0,malicious,typosquat,
+squat-pandsa,pypi,sdist,pandsa,1.0.0,malicious,typosquat,
+squat-dateutils,pypi,sdist,python-dateutils,1.0.0,malicious,install_hooks typosquat,
+combosquat-numpy-gpu,pypi,sdist,numpy-gpu-accel,1.0.0,malicious,install_hooks network typosquat,hard: combosquat not in the affix list
+squat-crossenv,npm,npm,crossenv,1.0.0,malicious,credentials install_hooks network typosquat,
+squat-lodahs,npm,npm,lodahs,1.0.0,malicious,install_hooks typosquat,
+squat-expresss,npm,npm,expresss,1.0.0,malicious,typosquat,
+squat-electorn,npm,npm,electorn,1.0.0,malicious,typosquat,
+squat-discordjs,npm,npm,discordjs,1.0.0,malicious,credentials typosquat,
+depconf-internal-auth,pypi,sdist,acme-internal-auth,99.0.0,malicious,depconfusion,
+depconf-setup-post,pypi,sdist,contoso-data-utils,100.0.0,malicious,depconfusion install_hooks,
+depconf-logger,npm,npm,fabrikam-logger,9000.0.0,malicious,depconfusion,
+depconf-intranet,pypi,sdist,corp-intranet-client,99.1.0,malicious,depconfusion,
+plain-lib,pypi,sdist,tinymath,1.0.0,benign,,
+setup-build-ext-cmake,pypi,sdist,fastgrid,1.0.0,benign,,tricky: native build at install time
+setup-version-exec,pypi,sdist,verlib,1.0.0,benign,,tricky: exec(open(...).read()) version idiom
+reads-home,pypi,sdist,cfgdir,1.0.0,benign,,tricky: reads single environment variables
+minified-bundle,npm,npm,tiny-widget,1.0.0,benign,,tricky: minified but not install-time
+node-gyp-native,npm,npm,fast-hash-native,1.0.0,benign,,tricky: implicit node-gyp build
+husky-postinstall,npm,npm,lint-helpers,1.0.0,benign,,
+thanks-postinstall,npm,npm,friendly-lib,1.0.0,benign,,
+prebuilt-binary-github,npm,npm,fast-tool-bin,1.0.0,benign,,tricky: downloads a prebuilt binary at install (esbuild/sharp style)
+data-uri-icon,pypi,sdist,iconlib,1.0.0,benign,,
+visitor-getattr,pypi,sdist,treewalk,1.0.0,benign,,tricky: getattr with a built name (dispatch idiom)
+api-client-token,pypi,sdist,weatherkit,1.0.0,benign,,tricky: sends its own API token in a header
+git-cli-runtime,pypi,sdist,gitsum,1.0.0,benign,,
+aws-config-reader,pypi,sdist,awsprofiles,1.0.0,benign,,tricky: legitimately reads ~/.aws/config
+ssh-known-hosts,pypi,sdist,sshtool,1.0.0,benign,,tricky: SSH helper reading known_hosts
+dotenv-loader,npm,npm,envfile-loader,1.0.0,benign,,
+api-client-js,npm,npm,search-client,1.0.0,benign,,
+env-report-cli,npm,npm,envreport,1.0.0,benign,,tricky: prints the environment for bug reports
+calver,pypi,sdist,tzrules,2024.11.5,benign,,
+high-version-driver,npm,npm,browser-driver-helper,131.0.2,benign,,tricky: version tracks a browser's major (chromedriver style)
+crypto-test-vectors,pypi,sdist,hashkit,1.0.0,benign,,
+pth-shim,pypi,wheel,shimlib,1.0.0,benign,,tricky: setuptools-style .pth import shim
+localhost-server,pypi,sdist,devserve,1.0.0,benign,,
+router-default-ip,pypi,sdist,routerctl,1.0.0,benign,,
+install-copy-file,npm,npm,platform-shim,1.0.0,benign,,
+setup-cffi,pypi,sdist,cffiwrap,1.0.0,benign,,
+docs-urls,pypi,sdist,linklib,1.0.0,benign,,
+globalthis-polyfill,npm,npm,get-global,1.0.0,benign,,
+repl-eval,npm,npm,calc-repl,1.0.0,benign,,
+script-runner-compile,pypi,sdist,runit,1.0.0,benign,,
+plugin-loader-decode,pypi,sdist,plugload,1.0.0,benign,,tricky: executes a local config file read as bytes
+telemetry-optin,npm,npm,opt-in-telemetry,1.0.0,benign,,
+dns-constant,pypi,sdist,netcheck,1.0.0,benign,,
+dns-region-format,pypi,sdist,regionping,1.0.0,benign,,tricky: hostname built from a region name
+git-wrapper-runtime,npm,npm,git-head,1.0.0,benign,,
+only-allow-pnpm,npm,npm,pnpm-workspace-tool,1.0.0,benign,,
+postinstall-or-exit,npm,npm,safe-post,1.0.0,benign,,
+setup-readme,pypi,sdist,readmepkg,1.0.0,benign,,
+setup-git-version,pypi,sdist,gitver,1.0.0,benign,,
+setup-make,pypi,sdist,makebuilt,1.0.0,benign,,
+css-font-base64,npm,npm,inline-font,1.0.0,benign,,
+jwt-decode-atob,npm,npm,tiny-jwt-decode,1.0.0,benign,,
+rot13-codec,pypi,sdist,puzzles,1.0.0,benign,,
+plugin-getattr-module,pypi,sdist,plugmod,1.0.0,benign,,
+deploy-ssh-config,npm,npm,deploy-ssh-helper,1.0.0,benign,,tricky: deployment tool that edits ~/.ssh/config
+calver-date-major,npm,npm,daily-rates,20241105.0.0,benign,,
+internal-name-normal-version,npm,npm,acme-internal-tools,1.4.2,benign,,
+publish-helper-npmrc,npm,npm,publish-check,1.0.0,benign,,tricky: release tool that checks for a project .npmrc
+yaml-js-port,npm,npm,yaml-js,1.0.0,benign,,tricky: '<popular>-js' port naming
+pytoml-port,pypi,sdist,pytoml,1.0.0,benign,,tricky: 'py<popular>' naming
+express-middleware,npm,npm,express-request-timing,1.0.0,benign,,
+pandas-helpers,pypi,sdist,frametools,1.0.0,benign,,
+wheel-plain,pypi,wheel,wheelpkg,1.0.0,benign,,
+ts-types,npm,npm,typed-add,1.0.0,benign,,

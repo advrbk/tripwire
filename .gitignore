@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+build/
+dist/
+
+# Runtime data (downloaded archives and databases are never committed)
+quarantine/*
+!quarantine/.keep
+data/*
+!data/.keep
+benchmark/corpus/
+benchmark/results.json
+# databases and logs written anywhere else (--db, TRIPWIRE_DB, shell redirects)
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

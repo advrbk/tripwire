@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tripwire feed</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <h1>Tripwire</h1>
+        <p class="sub">Static scan of new PyPI and npm releases. Flags are leads for a human to review, not confirmed malware.</p>
+      </div>
+    </div>
+    <div class="stats" id="stats" aria-live="polite"></div>
+  </header>
+
+  <form class="filters" id="filters" autocomplete="off">
+    <label>Ecosystem
+      <select name="ecosystem">
+        <option value="">All</option>
+        <option value="pypi">PyPI</option>
+        <option value="npm">npm</option>
+      </select>
+    </label>
+    <label>Min score <output id="minv">0</output>
+      <input type="range" name="min_score" min="0" max="100" step="5" value="0">
+    </label>
+    <label>Analyser
+      <select name="analyzer" id="analyzer"><option value="">Any</option></select>
+    </label>
+    <label class="grow">Package
+      <input type="search" name="q" placeholder="name contains...">
+    </label>
+    <label class="check"><input type="checkbox" name="flagged"> Flagged only</label>
+    <label class="check"><input type="checkbox" name="live" checked> Auto-refresh</label>
+  </form>
+
+  <main>
+    <p class="count" id="count"></p>
+    <ol class="feed" id="feed"></ol>
+    <button type="button" id="more" class="more" hidden>Load more</button>
+    <p class="empty" id="empty" hidden>No releases match these filters yet.</p>
+  </main>
+
+  <template id="row-tpl">
+    <li class="row">
+      <button type="button" class="head" aria-expanded="false">
+        <span class="score"></span>
+        <span class="main">
+          <span class="title"><span class="name"></span><span class="ver"></span><span class="eco"></span></span>
+          <span class="why"></span>
+          <span class="chips"></span>
+        </span>
+        <span class="when"></span>
+      </button>
+      <div class="detail" hidden></div>
+    </li>
+  </template>
+</body>
+</html>
